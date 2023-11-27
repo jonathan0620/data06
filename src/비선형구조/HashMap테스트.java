@@ -1,6 +1,7 @@
 package 비선형구조;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class HashMap테스트 {
 
@@ -23,13 +24,21 @@ public class HashMap테스트 {
 		
 		//3. 완주하지 못한 선수를 답안으로 작성한다.
 		String answer = "";
+		//hashmap을 꺼낼 때는 함수를 따로 써야함.
+		Set keys = list.keySet();
+		for (Object key : keys) {
+			if (list.get(key) != 0) {
+				answer = (String)key;
+				break;
+			}
+		}
 		for (int i = 0; i < s.length; i++) {
-			if(list.get(s[i])==0) {
+			if(list.get(s[i])!=0) {
 				answer = s[i];
 				break;
 			}
 		}
-		
+		System.out.println(answer);
 
 	}
 
